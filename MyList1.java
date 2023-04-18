@@ -56,7 +56,14 @@
 
         @Override
         public boolean remove(Object item) {
-            return false;
+            boolean rem=false;
+            int i;
+            for(i=0; i<size; i++){
+                if(arr[i]==item){
+                    remove(i);
+                }
+            }
+            return rem;
         }
 
         @Override
