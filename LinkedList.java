@@ -206,8 +206,22 @@ public class LinkedList<T> implements MyList{
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        Node<T> newNode = new Node<T>((T) o, null, null);
+        int index = size - 1;
+        if (tail.val == newNode.val) {
+            return index;
+        }
+        Node<T> ptr = tail.prev;
+        while (ptr != null) {
+            if (ptr.val == newNode.val) {
+                return index;
+            }
+            index--;
+            ptr = ptr.prev;
+        }
+        return -1;
     }
+
 
     @Override
     public void sort() {
