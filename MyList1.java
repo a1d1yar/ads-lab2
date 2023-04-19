@@ -68,6 +68,12 @@
 
         @Override
         public Object remove(int index) {
+            checkIndex(index);
+            int i ;
+             for ( i = index + 1; i < size; i++) {
+                arr[i - 1] = arr[i];
+            }
+            size--;
             return null;
         }
 
@@ -78,17 +84,24 @@
 
         @Override
         public Object get(int index) {
-            return null;
+
         }
 
         @Override
         public int indexOf(Object o) {
-            return 0;
+
+            return -777;
         }
 
         @Override
         public int lastIndexOf(Object o) {
-            return 0;
+
+            return -777;
+        }
+        public void checkIndex(int index) {
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException();
+            }
         }
 
         @Override
