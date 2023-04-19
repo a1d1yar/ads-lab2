@@ -105,10 +105,35 @@ public class LinkedList<T> implements MyList{
 
     @Override
     public boolean remove(Object item) {
+        Node<T> ptr = head;
+        while (ptr != null) {
+            if (ptr.val.equals(item)) {
+                if (ptr == head) {
+                    head = head.next;
+                    if (head != null) {
+                        head.prev = null;
+                    }
+                } else if (ptr == tail) {
+                    tail = tail.prev;
+                    if (tail != null) {
+                        tail.next = null;
+                    }
+                } else {
+                    Node<T> prevNode = ptr.prev;
+                    Node<T> nextNode = ptr.next;
+                    prevNode.next = nextNode;
+                    nextNode.prev = prevNode;
+                }
+                size--;
+                return true;
+            }
+            ptr = ptr.next;
+        }
         return false;
     }
 
-    @Override
+
+        @Override
     public Object remove(int index) {
         return null;
     }
