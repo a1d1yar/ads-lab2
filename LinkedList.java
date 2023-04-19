@@ -164,11 +164,7 @@ public class LinkedList<T> implements MyList{
             size--;
             return removed;
         }
-
-
-
-
-            @Override
+        @Override
     public void clear() {
         head = null;
         tail = null;
@@ -177,6 +173,17 @@ public class LinkedList<T> implements MyList{
 
     @Override
     public Object get(int index) {
+        checkIndex(index);
+        if (index == 0) {
+            return head.val;
+        }
+        Node<T> ptr = head.next;
+        for (int i = 1; i < size; i++) {
+            if (i == index) {
+                return ptr.val;
+            }
+            ptr = ptr.next;
+        }
         return null;
     }
 

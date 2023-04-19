@@ -16,5 +16,6 @@ public class Main {
         list.add("4rftefr");
         list.add("end",4);
         list.printList();
+
     }
 }
