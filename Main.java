@@ -10,12 +10,13 @@ public class Main {
 
         */
         LinkedList list = new LinkedList<>();
-        list.add(2.0);
-        list.add(5.0);
-        list.add(1.1);
-        list.add(6.4);
-        list.add(7.5);
+        list.add(2);
+        list.add(5);
+        list.add(1);
+        list.add(6);
+        list.add(7);
         list.printList();
+        System.out.println(list.isSortable());
         list.sort();
         list.printList();
 
