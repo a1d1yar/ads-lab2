@@ -135,10 +135,40 @@ public class LinkedList<T> implements MyList{
 
         @Override
     public Object remove(int index) {
-        return null;
-    }
+            checkIndex(index);
+            if (index == 0) {
+                T removed = head.val;
+                if (size == 1) {
+                    head = null;
+                    tail = null;
+                } else {
+                    head = head.next;
+                    head.prev = null;
+                }
+                size--;
+                return removed;
+            }
+            if (index == size - 1) {
+                T removed = tail.val;
+                tail = tail.prev;
+                tail.next = null;
+                size--;
+                return removed;
+            }
+            Node<T> ptr = getNode(index);
+            Node<T> prevNode = ptr.prev;
+            Node<T> nextNode = ptr.next;
+            T removed = ptr.val;
+            prevNode.next = nextNode;
+            nextNode.prev = prevNode;
+            size--;
+            return removed;
+        }
 
-    @Override
+
+
+
+            @Override
     public void clear() {
 
     }
