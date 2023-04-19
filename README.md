@@ -212,6 +212,7 @@ _Code:_
 __Description:__
 >Prints all elements in the list in order.
 
+_Code:_
 ```java
  public void printList() {
         for (int i = 0; i < size; i++) {
@@ -250,6 +251,7 @@ __Description:__
 __Description:__
 >Swaps the elements at the two specified indices in the array.
 
+_Code:_
 ```java
 private void swap(int i, int j) {
         T temp = arr[i];
@@ -265,6 +267,7 @@ private void swap(int i, int j) {
 __Description:__
 >returning size of linked list.
 
+_Code:_
 ```java
 public int size() {
         return size;
@@ -393,6 +396,7 @@ _Code:_
 ## remove(Object item)
 __Description:__
 >Removes the first occurrence of the specified object from the list, if it is present.
+
 _Code:_
 ```java
 public boolean remove(Object item) {
@@ -497,6 +501,7 @@ _Code:_
 ## indexOf()
 __Description:__
 >Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.
+
 _Code:_
 ```java
 public int indexOf(Object o) {
@@ -539,7 +544,7 @@ _Code:_
 ```
 ## sort()
 __Description:__
->orts the elements of this LinkedList in ascending order.
+>sorts the elements of this LinkedList in ascending order.
 
 _Code:_
 ```java
@@ -585,6 +590,8 @@ _Code:_
 ## isSortable()
 __Description:__
 > Returns a boolean indicating if this LinkedList can be sorted using the sort method.
+
+_Code:_
 ```java
 public boolean isSortable() {
         Node<T> ptr = head;
