@@ -10,12 +10,14 @@ public class Main {
 
         */
         LinkedList list = new LinkedList<>();
-        list.add("a");
-        list.add("1");
-        list.add("333");
-        list.add("4rftefr");
-        list.add("end",4);
-        System.out.println(list.get(4));
+        list.add(2.0);
+        list.add(5.0);
+        list.add(1.1);
+        list.add(6.4);
+        list.add(7.5);
+        list.printList();
+        list.sort();
+        list.printList();
 
     }
 }

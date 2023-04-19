@@ -232,11 +232,51 @@ public class LinkedList<T> implements MyList{
 
     @Override
     public void sort() {
-
+        if (isSortable()) {
+            Node<T> front = head;
+            Node<T> back = null;
+            while (front != null) {
+                back = front.next;
+                while (back != null && back.prev != null && (Integer) back.val < (Integer) back.prev.val) {
+                    swapValues(back, back.prev);
+                    back = back.prev;
+                }
+                front = front.next;
+            }
+        }
     }
     public void checkIndex(int index){
         if(index<0||index>size){
             throw new IndexOutOfBoundsException();
         }
+    }
+    public void swapValues(Node<T> first, Node<T> second) {
+        T value = first.val;
+        first.val = second.val;
+        second.val = value;
+    }
+
+    public boolean isSortable() {
+        Node<T> ptr = head;
+        int intSize = 0;
+        int doubleSize = 0;
+        for (int i = 1; i <= size; i++) {
+            try {
+                int value = (Integer) ptr.val ;
+                intSize++;
+            } catch (ClassCastException e) {
+            }
+            try {
+                double tempD = (Double) ptr.val;
+                doubleSize++;
+            } catch (ClassCastException e) {
+            }
+            ptr = ptr.next;
+        }
+        System.out.println(intSize + " " + doubleSize);
+        if (intSize == size || doubleSize == size || doubleSize + intSize == size) {
+            return true;
+        }
+        return false;
     }
 }
