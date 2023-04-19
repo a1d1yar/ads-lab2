@@ -91,13 +91,16 @@ public class MyList1<T> implements MyList {
 
     @Override
     public int indexOf(Object o) {
-
+        for(int i=0;i<size;i++){
+            if(arr[i]==o){
+                return i;
+            }
+        }
         return -777;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-
 
         return -777;
     }
