@@ -103,12 +103,59 @@ public class MyList1<T> implements MyList {
     }
     @Override
     public void sort() {
-
+        String type = getType();
+        if (type.equals("int")) { // sorting if array has all integers
+            for (int i = size - 1; i > 0; i--) {
+                for (int j = 0; j < i; j++) {
+                    if ((int) arr[j] > (int) arr[j + 1]) {
+                        swap(j, j + 1);
+                    }
+                }
+            }
+        } else if (type.equals("double")) { // sorting if array has all doubles
+            for (int i = size - 1; i > 0; i--) {
+                for (int j = 0; j < i; j++) {
+                    if ((double) arr[j] > (double) arr[j + 1]) {
+                        swap(j, j + 1);
+                    }
+                }
+            }
+        }
     }
+
+
+
     public void printList() {
         for (int i = 0; i < size; i++) {
             System.out.print(arr[i] + ", ");
         }
         System.out.println();
     }
+
+    private String getType() {
+        boolean hasIntegers = true;
+        boolean hasDoubles = true;
+        for (int i = 0; i < size; i++) {
+            if (!(arr[i] instanceof Integer)) {
+                hasIntegers = false;
+            }
+            if (!(arr[i] instanceof Double)) {
+                hasDoubles = false;
+            }
+        }
+        if (hasIntegers) {
+            return "int";
+        } else if (hasDoubles) {
+            return "double";
+        } else {
+            throw new IllegalArgumentException("Array must contain either all integers or all doubles.");
+        }
+    }
+
+    private void swap(int i, int j) {
+        T temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
 }
