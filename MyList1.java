@@ -30,11 +30,11 @@ public class MyList1<T> implements MyList {
     }
     @Override
     public void add(Object item) {
-        if(size==arr.length){
-            addArraySize();
+            if(size == arr.length){
+                addArraySize();
+            }
+            arr[size++] = (T) item;
         }
-        arr[size++]= (T) item;
-    }
     @Override
     public void add(Object item, int index) {
         int i;
@@ -105,5 +105,11 @@ public class MyList1<T> implements MyList {
     @Override
     public void sort() {
 
+    }
+    public void printList() {
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println();
     }
 }
