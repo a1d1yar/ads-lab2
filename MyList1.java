@@ -85,7 +85,8 @@ public class MyList1<T> implements MyList {
 
     @Override
     public Object get(int index) {
-
+        checkIndex(index);
+        return arr[index];
     }
 
     @Override
@@ -97,7 +98,7 @@ public class MyList1<T> implements MyList {
     @Override
     public int lastIndexOf(Object o) {
 
-        }
+
         return -777;
     }
     public void checkIndex(int index) {
