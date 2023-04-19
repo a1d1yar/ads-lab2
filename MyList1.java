@@ -1,4 +1,3 @@
-
 public class MyList1<T> implements MyList {
     private T[] arr;
     private int size;
@@ -30,11 +29,11 @@ public class MyList1<T> implements MyList {
     }
     @Override
     public void add(Object item) {
-            if(size == arr.length){
-                addArraySize();
-            }
-            arr[size++] = (T) item;
+        if(size == arr.length){
+            addArraySize();
         }
+        arr[size++] = (T) item;
+    }
     @Override
     public void add(Object item, int index) {
         int i;

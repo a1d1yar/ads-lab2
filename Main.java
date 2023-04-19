@@ -15,7 +15,7 @@ public class Main {
         list.add("333");
         list.add("4rftefr");
         list.add("end",4);
-        list.printList();
+        System.out.println(list.get(4));
 
     }
 }
