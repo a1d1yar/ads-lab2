@@ -51,6 +51,13 @@ public class LinkedList<T> implements MyList{
 
     @Override
     public boolean contains(Object o) {
+        Node<T> ptr = head;
+        while (ptr != null) {
+            if (o.equals(ptr.val)) {
+                return true;
+            }
+            ptr = ptr.next;
+        }
         return false;
     }
 
